@@ -1,10 +1,9 @@
 tmux-sexy
 =========
-tmux sexy 💋.
-
-![](preview.png)
 
 A [tmux](https://github.com/tmux/tmux) theme that is sexy and minimal.
+
+![](preview.png)
 
 ## Installation
 
