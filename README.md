@@ -2,7 +2,7 @@ tmux-sexy
 =========
 tmux sexy 💋
 
-![](tmux-sexy-preview.png)
+![](preview.png)
 
 
 ## Installation
