@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-current_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-source $current_dir/scripts/sexy.sh
+CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source $CURRENT_DIR/scripts/sexy.sh
