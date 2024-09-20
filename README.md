@@ -1,7 +1,6 @@
-tmux-sexy
-=========
+# retro-theme.tmux
 
-A [tmux](https://github.com/tmux/tmux) theme that is sexy and minimal.
+A [tmux](https://github.com/tmux/tmux) theme that is retro.
 
 ![](preview.png)
 
@@ -21,13 +20,13 @@ Check the documentation below on the options available.
 ```tmux
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
-set -g @plugin 'mistweaverco/tmux-sexy'
+set -g @plugin 'mistweaverco/retro-theme.tmux'
 ```
 
 ### Manual Installation
 
-1. Clone this repository to your desired location (e.g. `~/.config/tmux/plugins/tmux-sexy`).
-2. Add this line to your `~/.tmux.conf`: `run ~/.config/tmux/plugins/tmux-sexy/tmux-sexy.tmux`.
+1. Clone this repository to your desired location (e.g. `~/.config/tmux/plugins/retro-theme.tmux`).
+2. Add this line to your `~/.tmux.conf`: `run ~/.config/tmux/plugins/retro-theme.tmux/retro.tmux`.
 3. Reload TMUX environment with `$ tmux source-file ~/.tmux.conf`.
 
 ## Configuration Options
@@ -37,9 +36,9 @@ set -g @plugin 'mistweaverco/tmux-sexy'
 You can override any icon by setting the corresponding option to any string (even empty).
 
 ```tmux
-set -g @sexy-nerdfonts-right ''
-set -g @sexy-nerdfonts-left ''
-set -g @sexy-nerdfonts-icon-session ''
-set -g @sexy-nerdfonts-icon-datetime ''
-set -g @sexy-nerdfonts-icon-application ''
+set -g @retro-nerdfonts-right ''
+set -g @retro-nerdfonts-left ''
+set -g @retro-nerdfonts-icon-session ''
+set -g @retro-nerdfonts-icon-datetime ''
+set -g @retro-nerdfonts-icon-application ''
 ```
