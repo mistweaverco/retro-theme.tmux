@@ -20,6 +20,14 @@ padding() {
   printf '%*s' $1
 }
 
+grow_session_name_dynamic() {
+  local session_name
+  local session_name_length
+  session_name=$(tmux display-message -p '#S')
+  session_name_length=${#session_name}
+  tmux set-option -g status-left-length $((session_name_length + 2))
+}
+
 CONFIG_NERDFONTS_LEFT=$(get_option "@retro-nerdfonts-right" )
 CONFIG_NERDFONTS_RIGHT=$(get_option "@retro-nerdfonts-right" )
 CONFIG_NERDFONTS_ICON_SESSION=$(get_option "@retro-nerdfonts-icon-session" )
@@ -30,3 +38,5 @@ tmux set-option -gq status-left "#[fg=green,bg=#2F343F,nobold,nounderscore,noita
 tmux set-option -gq status-right "#[fg=orange,bg=#2F343F,nobold,nounderscore,noitalics]$CONFIG_NERDFONTS_LEFT#[fg=#2F343F,bg=orange,nobold,nounderscore,noitalics]$CONFIG_NERDFONTS_ICON_DATETIME #[fg=#999999,bg=#2F343F,nobold,nounderscore,noitalics] %Y-%m-%d %H:%M #[fg=#2F343F,bg=#2F343F,nobold,nounderscore,noitalics]$CONFIG_NERDFONTS_RIGHT"
 tmux set-option -gq window-status-format "#[fg=blue,bg=#2F343F,nobold,nounderscore,noitalics]$CONFIG_NERDFONTS_LEFT#[fg=#2F343F,bg=blue,nobold,nounderscore,noitalics]#I #[fg=#555555,bg=#2F343F,nobold,nounderscore,noitalics] #W #[fg=#2F343F,bg=#2F343F,nobold,nounderscore,noitalics]$CONFIG_NERDFONTS_RIGHT"
 tmux set-option -gq window-status-current-format "#[fg=magenta,bg=#2F343F,nobold,nounderscore,noitalics]$CONFIG_NERDFONTS_LEFT#[fg=#2F343F,bg=magenta,nobold,nounderscore,noitalics]#I #[fg=#CCCCCC,bg=#2F343F,nobold,nounderscore,noitalics] #W #[fg=#2F343F,bg=#2F343F,nobold,nounderscore,noitalics]$CONFIG_NERDFONTS_RIGHT"
+
+set-hook -g client-attached 'run-shell "grow_session_name_dynamic"'
