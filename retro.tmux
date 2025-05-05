@@ -39,4 +39,6 @@ tmux set-option -gq status-right "#[fg=orange,bg=#2F343F,nobold,nounderscore,noi
 tmux set-option -gq window-status-format "#[fg=blue,bg=#2F343F,nobold,nounderscore,noitalics]$CONFIG_NERDFONTS_LEFT#[fg=#2F343F,bg=blue,nobold,nounderscore,noitalics]#I #[fg=#555555,bg=#2F343F,nobold,nounderscore,noitalics] #W #[fg=#2F343F,bg=#2F343F,nobold,nounderscore,noitalics]$CONFIG_NERDFONTS_RIGHT"
 tmux set-option -gq window-status-current-format "#[fg=magenta,bg=#2F343F,nobold,nounderscore,noitalics]$CONFIG_NERDFONTS_LEFT#[fg=#2F343F,bg=magenta,nobold,nounderscore,noitalics]#I #[fg=#CCCCCC,bg=#2F343F,nobold,nounderscore,noitalics] #W #[fg=#2F343F,bg=#2F343F,nobold,nounderscore,noitalics]$CONFIG_NERDFONTS_RIGHT"
 
-set-hook -g client-attached 'run-shell "grow_session_name_dynamic"'
+tmux set-hook -g client-attached "run-shell $PLUGIN_DIR/grow_session_name.sh"
+tmux set-hook -g session-created "run-shell $PLUGIN_DIR/grow_session_name.sh"
+tmux set-hook -g session-renamed "run-shell $PLUGIN_DIR/grow_session_name.sh"
